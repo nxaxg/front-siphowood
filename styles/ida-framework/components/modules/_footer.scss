@@ -16,13 +16,13 @@
 	&__link {
 		display: block;
 		font-weight: bold;
-		&:not(:first-child) { margin-top: .5rem; }
+		&:not(:first-child) { padding-top: .5rem; }
 
 		&--inline {
 			display: inline-block;
 			vertical-align: middle;
 			padding: 0 1rem;
-			&:not(:first-child) { margin-top: 0; }
+			&:not(:first-child) { padding-top: 0; }
 		}
 	}
 }

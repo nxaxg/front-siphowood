@@ -8,8 +8,9 @@ html{ font-family: $base_sans_font_family; }
 //////////////////////////////////////// Header
 ////////////////////////////////////////
 .top-bar{
+	background: $color_gray_darker;
 	.social-link:not([class*="--ghost"]){
-		background: get-color(grey, darker);
+		background: $color_gray_darker;
 	}
 
 	&__item{
@@ -24,43 +25,42 @@ html{ font-family: $base_sans_font_family; }
 }
 
 .nav-bar {
-	background: get-color(grey, darker);
+	background: $color_gray_darker;
 
 	&__menu {
-		background: get-color(grey, darker);
+		background: $color_gray_darker;
 	}
 
 	.menu-item {
 		color: $color_white;
 
 		&--current{
-			background: get-color(grey, darkest);
+			background: $color_black;
 			color: $color_gray;
-			&:hover{
-				background-color: $color_black;
-			}
 			@include media(medium-down){
-				background: get-color(grey, darkest);
+				background: $color_black;
 			}
 		}
 
 		&__link{
-			color: get-color(grey, light);
+			color: $color_gray_light;
 			padding: .75rem 1rem;
 			@include media(medium-down){
-				background: get-color(grey, dark);
+				background: $color_gray_dark;
+				color: $color_white;
 			}
 		}
 		
 		&:hover{
-			background-color: get-color(grey, dark);
+			background-color: $color_gray_dark;
+			color: $color_white;
 		}
 
 	}
 
 	@include media( medium-down ){
-		background: get-color(grey, darkest);
-		color: get-color(grey, regular);
+		background: $color_gray_darker;
+		color: $color_gray;
 	}
 }
 
@@ -71,13 +71,13 @@ html{ font-family: $base_sans_font_family; }
 ////////////////////////////////////////
 
 .footer-bar {
-	background: map-get(map-get($colors_map, grey), darker);
+	background: $color_gray_darker;
 	.social-link:not([class*="--ghost"]){
-		background: get-color(grey, darker);
+		background: $color_gray_darker;
 	}
 
 	.app-brand__name {
-		margin-top: 1em;
+		padding-top: 1em;
 		&:hover{
 			color: $color_gray;
 		}
@@ -186,7 +186,7 @@ h4:not(:first-child):not([class*=__title]){
     font-family: $base_serif_font_family;
     font-size: map-get($text_sizes, tall);
     font-weight: normal;
-    margin-top: 2rem;
+    //padding: 2rem 0 0 0;
     a{
     	color: $color_main_light;
     	text-decoration: underline;
@@ -194,6 +194,9 @@ h4:not(:first-child):not([class*=__title]){
     		text-decoration: none;
     	}
     }
+	&__center{
+		text-align: center;
+	}
 }
 
 .main-title--sub{
@@ -248,6 +251,7 @@ h4:not(:first-child):not([class*=__title]){
 	font-weight: regular;
 	font-size: map-get($text_sizes, tall);
 	font-style: map-get($text_sizes, big);
+	font-family: $base_serif_font_family;
 	color: $color_white;
 	text-align: center;
 	padding: .5em 1em .3em;
@@ -256,36 +260,42 @@ h4:not(:first-child):not([class*=__title]){
 }
 
 .overlap--footer{
-    position: absolute;
-    display: inline-block;
-    font-size: .8rem;
-    font-style: map-get($text_sizes, big);
-    color: #fff;
-    text-align: center;
-    padding: .5em .5em .3em;
-    background: $color_black;
-    border-radius: $base_border_radius 0 0 0;
-    right: 0;
-    bottom: .02em;
+	position: absolute;
+	display: inline-block;
+	font-weight: regular;
+	font-size: map-get($text_sizes, small);
+	font-style: map-get($text_sizes, big);
+	color: $color_white;
+	text-align: center;
+	padding: .5em .5em .3em;
+	background: $color_black;
+	border-radius: $base_border_radius 0 0 0;
+	right: 0;
+	bottom: .02em;
 }
 
 .overlap--footer__l{
 	position: absolute;
-    display: inline-block;
-    font-size: .8rem;
-    font-style: map-get($text_sizes, big);
-    color: #fff;
-    text-align: center;
-    padding: .5em .5em .3em;
-    background: $color_black;
-    border-radius: $base_border_radius 0 0 0;
-    right: 0;
-    bottom: .02em;
+	display: inline-block;
+	font-weight: regular;
+	font-size: map-get($text_sizes, small);
+	font-style: map-get($text_sizes, big);
+	color: $color_white;
+	text-align: center;
+	padding: .5em .5em .3em;
+	background: $color_black;
+	border-radius: $base_border_radius 0 0 0;
+	right: 0;
+	bottom: .02em;
 	left: 5.85em;
 }
 
 .horizon {
-	padding: 0 0 2rem 0;
+	padding-bottom: 2rem;
+
+	&__inner{
+		padding-top: 2rem;
+	}
 
 	.common-box--fancy__left{ margin-bottom: .35em; }
 }
@@ -300,6 +310,12 @@ h4:not(:first-child):not([class*=__title]){
 	padding: .625em 1em;
 	margin-top: .5em;
 	font-size: map-get($text_sizes, tiny);
+
+	&__main{
+		padding: .5rem 2.5rem;
+		font-size: map-get($text_sizes, medium);
+		margin-top: 2rem;
+	}
 	&:hover{
 		background: $color_black;
 		color: $color_white;
@@ -352,10 +368,11 @@ h4:not(:first-child):not([class*=__title]){
 	border-radius: 0;
 	position: relative;
 	bottom: .7em;
-	padding: .9em .7em .7em;
-	text-decoration: underline;
+	padding: .5rem;
+	text-decoration: none;
 	&:hover{
-		color: $color_black;
+		color: $color_white;
+		background: $color_black;
 	}
 
 	.icon-elem--chevron_right{ vertical-align: initial; }
@@ -382,7 +399,6 @@ h4:not(:first-child):not([class*=__title]){
 
 .bg-lines{
 	background: url(../images/tramas/noise_lines.png);
-	padding-bottom: 1em;
 
 	.common-box__meta{ padding-top: 1em; }
 }
@@ -405,7 +421,7 @@ h4:not(:first-child):not([class*=__title]){
 		background: url(../images/tramas/noise_lines.png);
 		color: $color_black;
 		font-size: .875rem;
-		font-weight: normal;
+		font-weight: normal;	
 		&:before{
 			border-color: transparent whitesmoke transparent transparent; 
 		}
@@ -816,7 +832,9 @@ h4:not(:first-child):not([class*=__title]){
 		.owl-next{ left: 89%; }
 	}
 	
-	.overlap{ font-size: 1rem; }
+	.overlap{ 
+		font-size: 1rem;
+	}
 
 	.horizon__search{
 		.common-box--body__medium {
@@ -892,5 +910,15 @@ h4:not(:first-child):not([class*=__title]){
 		.button--black__right{
 			bottom: .9rem;
 		}
+	}
+}
+
+.srch-btn{
+	width: 5%;
+	.icon-elem{
+		font-size: map-get($text_sizes, big);
+	}
+	@include media(medium-down){
+		width: 20%;
 	}
 }
