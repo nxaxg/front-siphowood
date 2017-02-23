@@ -1,0 +1,99 @@
+
+
+//////////////////////////////////
+////////////////////////////////// Blocks
+//////////////////////////////////
+
+.elastic-img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+.cover-img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.content-box {
+	padding: 1rem;
+	margin: 1rem 0;
+	background: $color_white;
+	border: 1px solid map-get(map-get($colors_map, grey), lighter);
+	border-radius: $base_border_radius;
+
+	&:only-child { margin: 0; }
+}
+
+
+//////////////////////////////////
+////////////////////////////////// Typoraphy
+//////////////////////////////////
+
+// font styles
+.font-line-through { text-decoration: line-through; }
+.font-bold { font-weight: bold; }
+.font-italic { font-style: italic; }
+
+// font alignments
+.font-centered { text-align: center; }
+.font-lefted { text-align: left; }
+.font-righted { text-align: right; }
+
+// font sizes
+@each $size_key, $size_val in $text_sizes {
+	.font-size-#{$size_key} { font-size: $size_val; }
+} 
+
+// font colors
+@each $type, $colors in $colors_map {
+	@each $shade, $code in $colors {
+		.font-color-#{$type}-#{$shade} { color: $code; }
+	}
+}
+
+
+//////////////////////////////////
+////////////////////////////////// Helper classes
+//////////////////////////////////
+
+// backgrounds and borders
+@each $type, $colors in $colors_map {
+	@each $shade, $code in $colors {
+		.bg-#{$type}-#{$shade} { background: $code; }
+	}
+}
+
+.bg-white { background: $color_white; }
+.bg-black { background: $color_black; }
+
+.float-left { float: left; }
+.float-right { float: right; }
+
+.clearfix {
+    zoom: 1;
+
+	&::before, &::after {
+		content: "";
+    	display: table;
+	}
+
+	&::after { clear: both; }
+}
+
+
+//////////////////////////////////
+////////////////////////////////// Media helpers
+//////////////////////////////////
+@each $media_name, $media_size in $medias_map {
+	@include media( #{$media_name}-up ){
+		.hide-on-#{$media_name}-up { display: none !important; }
+	}
+	@include media( #{$media_name}-down ){
+		.hide-on-#{$media_name}-down { display: none !important; }
+	}
+}
+
+
+

@@ -1,0 +1,40 @@
+.app-brand {
+	display: block;
+	font-size: map-get($text_sizes, big);
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&__logo {
+		max-width: 100%;
+		max-height: 100%;
+	}
+	
+	// Elements
+	&__name, &__logo {
+		display: block;
+	}
+
+	// Modifiers
+	&--inline {
+		.app-brand__name, .app-brand__logo {
+			display: inline-block;
+		}
+	}
+
+	@include media( large-down ){
+		font-size: map-get($text_sizes, regular);
+	}
+
+	@include media( small-down ){
+		&__name, &--inline .app-brand__name { display: none; }
+	}
+}
+
+.image-box {
+	display: block;
+	padding: .5rem;
+	background: $color_white;
+	border: 1px solid map-get(map-get($colors_map, grey), lightest);
+}

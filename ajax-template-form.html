@@ -1,0 +1,74 @@
+<section class="form-box">
+	<div class="container gridle-no-gutter">
+		<div class="gridle-row">
+			<div class="gridle-gr-10 gridle-gr-12@medium gridle-gr-centered">		
+				<h2 class="title--tiny">
+					<strong>Producto a cotizar</strong>
+				</h2>
+				
+				<article class="common-box--horizontal">
+					<figure class="common-box__figure">
+						<a href="#">
+							<img src="images/img/img-product.png">
+						</a>
+					</figure>
+
+					<div class="common-box__body">
+						<h2 class="title--tiny">
+							<a href="#" >Producto XY</a>
+						</h2>
+										
+						<p class="common-box__meta"><strong>Sku: 653421</strong> <em> Marca</em></p>
+					</div>
+				</article>
+				
+				<form data-module="common-form">
+					<div class="gridle-gr-12 gridle-gr-12@medium">
+						<div class="form-control" data-error-message="Debe ingresar su nombre">
+							<label class="form-control__label">Nombre *</label>
+							<input type="text" class="form-control__field" required placeholder="Ingrese su nombre" data-custom-validation="onlyString">
+						</div>
+					</div>
+					<div class="gridle-gr-12 gridle-gr-12@medium">
+						<div class="form-control" data-error-message="Debe ingresar un email válido">
+							<label class="form-control__label">Mail *</label>
+							<input id="sample-email" type="email" class="form-control__field" required placeholder="Ingrese su email">
+						</div>
+					</div>
+					<div class="gridle-gr-12 gridle-gr-12@medium">
+						<div class="form-control" data-error-message="Debe ingresar su numero de teléfono">
+							<label class="form-control__label">Celular</label>
+							<input type="text" class="form-control__field" required placeholder="09" data-custom-validation="onlyNumbers" data-minlength="3" data-maxlength="10">
+						</div>
+					</div>
+					<div class="gridle-gr-12 gridle-gr-12@medium gridle-gr-centered">
+						<div class="form-control" data-error-message="Debe seleccionar una opción">
+							<label class="form-control__label">Cantidad de productos a cotizar *</label>
+							<select class="form-control__field form-control__field--select" required >
+								<option value="">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+						</div>       
+					</div>
+					<div class="gridle-gr-12 gridle-gr-12@medium">
+						<div class="form-control">
+							<label class="form-control__label">Text Area *</label>
+							<textarea class="form-control__field" required placeholder="Ingresa un comentario" rows="5"></textarea>
+							<span class="form-control__label font-size-tiny font-color-grey-light">Máx 500 caracteres</span>
+						</div>
+
+						<p class="common-box__meta">* Campos obligatorios</p>
+					</div>
+					<div class="gridle-gr-12 gridle-gr-12@medium gridle-gr-centered">
+						<button type="submit" class="button button--more button--ghost" data-module="modal" data-target="ajax-template.html">Enviar</button>
+						<a href="#" class="button button--ghost button--off font-size-small" >Cancelar</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

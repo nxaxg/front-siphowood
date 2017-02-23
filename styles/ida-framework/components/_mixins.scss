@@ -1,0 +1,111 @@
+////////////////////////////////////////
+//////////////////////////////////////// Funciones
+////////////////////////////////////////
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+@function get-color( $type, $shade ){
+	@return map-get(map-get($colors_map, $type), $shade);
+}
+
+
+
+////////////////////////////////////////
+//////////////////////////////////////// Utilitarios
+////////////////////////////////////////
+@mixin image-replacement {
+	font-size: 0;
+	line-height: 0;
+	color: transparent;
+	font-family: a;
+}
+
+@mixin reset-appearance {
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	background: transparent;
+	border-radius: 0;
+	line-height: 1;
+	border: 0;
+	outline: 0;
+	padding: 0;
+}
+
+@mixin remove-select-arrow {
+	text-indent: 0.01px;
+	text-overflow: '';
+	&::-ms-expand { display: none; }
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&::-ms-input-placeholder { @content; }
+}
+
+@mixin range-track {
+	&::-webkit-slider-runnable-track { @content; }
+	&::-moz-range-track { @content; }
+	&::-ms-track { @content; }
+}
+
+@mixin range-thumb {
+	&::-webkit-slider-thumb { @content; }
+	&::-moz-range-thumb{ @content; }
+	&::-ms-thumb { @content; }
+}
+
+
+////////////////////////////////////////
+//////////////////////////////////////// Media/Element Queries
+////////////////////////////////////////
+
+@mixin media( $type ){
+	@if $type == huge-up {
+		@media only screen and (min-width: $huge) { @content; }
+	}
+	@if $type == huge-down {
+		@media only screen and (max-width: $huge) { @content; }
+	}
+
+	@if $type == extra-large-up {
+		@media only screen and (min-width: $extra_large) { @content; }
+	}
+	@if $type == extra-large-down {
+		@media only screen and (max-width: $extra_large) { @content; }
+	}
+
+	@if $type == large-up {
+		@media only screen and (min-width: $large) { @content; }
+	}
+	@if $type == large-down {
+		@media only screen and (max-width: $large) { @content; }
+	}
+
+	@if $type == medium-up {
+		@media only screen and (min-width: $medium) { @content; }
+	}
+	@if $type == medium-down {
+		@media only screen and (max-width: $medium) { @content; }
+	}
+
+	@if $type == small-up {
+		@media only screen and (min-width: $small) { @content; }
+	}
+	@if $type == small-down {
+		@media only screen and (max-width: $small) { @content; }
+	}
+
+	@if $type == extra-small-up {
+		@media only screen and (min-width: $extra_small) { @content; }
+	}
+	@if $type == extra-small-down {
+		@media only screen and (max-width: $extra_small) { @content; }
+	}
+}

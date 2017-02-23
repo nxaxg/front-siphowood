@@ -1,0 +1,28 @@
+{
+  "name": "front-centros-de-investigacion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fdograph@bitbucket.org/idachile/front-centros.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/idachile/front-centros#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.16.0",
+    "browser-sync": "^2.17.3",
+    "browsersync-ssi": "^0.2.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sftp": "^0.1.5",
+    "gulp-sourcemaps": "^1.7.3"
+  }
+}

@@ -1,0 +1,47 @@
+////////////////////////////////////////
+//////////////////////////////////////// Base
+////////////////////////////////////////
+
+//$base_sans_font_family: "biryani", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//$base_serif_font_family: "alikeregular", 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+
+$base_serif_font_family: 'Droid Serif', serif;
+$base_sans_font_family: 'Source Sans Pro', sans-serif;
+
+////////////////////////////////////////
+//////////////////////////////////////// Colors
+////////////////////////////////////////
+
+/*$color_main_darker: 		#0C0729;
+$color_main_dark: 			#120561;
+$color_main_regular: 		#2D4993;
+$color_main_light: 			#75ACCC;
+$color_main_lighter: 		#D3E4F5;
+
+$color_secondary_regular: 	#F55500;
+$color_secondary_dark: 		darken($color_secondary_regular, 10);
+$color_secondary_darker: 	darken($color_secondary_dark, 10);
+$color_secondary_light: 	lighten($color_secondary_regular, 10);
+$color_secondary_lighter: 	lighten($color_secondary_light, 10);*/
+
+$color_black:				#0A0A0A;
+$color_gray_darker:			#3D3A3A;
+$color_gray_dark:			#706969;
+$color_gray:				#A39B99;
+$color_gray_light:			#BDB4B1;
+$color_gray_lighter:		#D6CDC9;
+$color_gray_lightest:		#F0EEED;
+$color_white:		  		#FFFFFF;
+
+$color_main:				#000000;
+$color_main_light:			#333333;
+$color_main_lighter:		#666666;
+
+$color_secondary_dark:		#134031;
+$color_secondary:			#2E735C;
+$color_secondary_light:		#548C7A;
+
+$color_backup_dark:			#00698C;
+$color_backup:				#1395BF;
+$color_backup_light:		#41B3D9;
+

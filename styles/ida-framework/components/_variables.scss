@@ -1,0 +1,302 @@
+////////////////////////////////////////
+//////////////////////////////////////// Paths
+////////////////////////////////////////
+$fonts_path: '../fonts';
+$images_path: '../images';
+
+////////////////////////////////////////
+//////////////////////////////////////// Base
+////////////////////////////////////////
+
+$base_sans_font_family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$base_serif_font_family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif !default;
+$base_font_size: 16px !default;
+$base_line_height: 1.6 !default;
+$base_padding: 1em !default; // em for it to react to its context
+$base_transition: all 200ms ease !default;
+$base_box_shadow: 0 0 .5em rgba(0,0,0,.1) !default;
+$base_border_radius: .25rem !default;
+
+////////////////////////////////////////
+//////////////////////////////////////// Typography
+////////////////////////////////////////
+
+$text_sizes: (
+	tinier: 	.625, 		//10px
+	tiny: 		.75rem,		// 12px
+	small: 		.875rem,	// 14px
+	regular: 	1rem,		// 16px
+	medium: 	1.125rem,	// 18px
+	big: 		1.25rem,	// 20px
+	bigger: 	1.5rem,		// 24px
+	tall: 		1.75rem,	// 28px
+	taller: 	2rem,		// 32px
+	huge: 		2.5rem 		// 40px
+);
+
+
+$headings_line_height: 1.2;
+$regular_line_height: $base_line_height;
+
+
+
+////////////////////////////////////////
+//////////////////////////////////////// Colors
+////////////////////////////////////////
+
+$color_black:  		  		black !default;
+$color_grey_darkest:   		#111 !default;
+$color_grey_darker:   		#333 !default;
+$color_grey_dark:	  		#666 !default;
+$color_grey_regular:  		#999 !default;
+$color_grey_light:	  		#ccc !default;
+$color_grey_lighter:  		#ddd !default;
+$color_grey_lightest: 		#eee !default;
+$color_white:		  		white !default;
+
+$color_main_darker: 		#004085 !default;
+$color_main_dark: 			#0b5eb8 !default;
+$color_main_regular: 		#2685eb !default;
+$color_main_light: 			#5cabff !default;
+$color_main_lighter: 		#8fc5ff !default;
+
+$color_secondary_darker: 	#804000 !default;
+$color_secondary_dark: 		#b35e09 !default;
+$color_secondary_regular: 	#e68422 !default;
+$color_secondary_light: 	#ffac59 !default;
+$color_secondary_lighter: 	#ffc68c !default;
+
+$color_backup_dark: 		#758c00 !default;
+$color_backup_regular: 		#a3bf13 !default;
+$color_backup_light: 		#bfd941 !default;
+
+$color_success_dark: 		#089950 !default;
+$color_success_regular: 	#1fcc75 !default;
+$color_success_light: 		#50e69b !default;
+
+$color_info_dark: 			#078c88 !default;
+$color_info_regular: 		#1dbfba !default;
+$color_info_light: 			#4cd9d4 !default;
+
+$color_warning_dark: 		#bf9900 !default;
+$color_warning_regular: 	#d9b00b !default;
+$color_warning_light: 		#f2c924 !default;
+
+$color_danger_dark: 		#992008 !default;
+$color_danger_regular: 		#cc3c1f !default;
+$color_danger_light: 		#e66950 !default;
+
+$colors_map : (
+	grey: (
+		darkest:  	$color_grey_darkest, 
+		darker:   	$color_grey_darker, 
+		dark: 	  	$color_grey_dark, 
+		regular:  	$color_grey_regular, 
+		light:    	$color_grey_light, 
+		lighter:  	$color_grey_lighter, 
+		lightest: 	$color_grey_lightest
+	),
+	main: (
+		darker:   	$color_main_darker, 
+		dark: 	  	$color_main_dark, 
+		regular:  	$color_main_regular, 
+		light: 		$color_main_light, 
+		lighter: 	$color_main_lighter
+	),
+	secondary: (
+		darker: 	$color_secondary_darker, 
+		dark: 		$color_secondary_dark, 
+		regular: 	$color_secondary_regular, 
+		light: 		$color_secondary_light, 
+		lighter: 	$color_secondary_lighter
+	),
+	backup: (
+		dark: 		$color_backup_dark, 
+		regular: 	$color_backup_regular, 
+		light: 		$color_backup_light
+	),
+	success: (
+		dark: 		$color_success_dark, 
+		regular: 	$color_success_regular, 
+		light: 		$color_success_light
+	),
+	info: (
+		dark: 		$color_info_dark, 
+		regular: 	$color_info_regular, 
+		light: 		$color_info_light
+	),
+	warning: (
+		dark: 		$color_warning_dark, 
+		regular: 	$color_warning_regular, 
+		light: 		$color_warning_light
+	),
+	danger: (
+		dark: 		$color_danger_dark, 
+		regular: 	$color_danger_regular, 
+		light: 		$color_danger_light
+	)
+);
+
+// social networks colors
+$color_facebook: 	#3b5998;
+$color_twitter: 	#55acee;
+$color_googleplus: 	#dd4b39;
+$color_linkedin: 	#0077b5;
+$color_youtube: 	#e52d27;
+$color_instagram: 	#405de6;
+$color_shortlink:   $color_secondary_regular;
+
+// especial
+$instagram_gradient: linear-gradient( #400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+
+$social_colors_map: (
+	facebook: $color_facebook,
+	twitter: $color_twitter,
+	googleplus: $color_googleplus,
+	linkedin: $color_linkedin,
+	youtube: $color_youtube,
+	instagram: $color_instagram,
+	shortlink: $color_shortlink,
+	email: $color_warning_light
+);
+
+
+////////////////////////////////////////
+//////////////////////////////////////// Breakpoints & sizes
+////////////////////////////////////////
+
+$extra_small: 	20em !default;  // ~320px
+$small: 		40em !default;  // ~640px
+$medium: 		50em !default;  // ~800px
+$large: 		64em !default;  // ~1024px
+$extra_large: 	80em !default;  // ~1280px
+$huge: 			90em !default;  // ~1440px
+
+$medias_map: (
+	extra-small: $extra_small,
+	small: $small,
+	medium: $medium,
+	large: $large,
+	extra-large: $extra_large,
+	huge: $huge
+);
+
+////////////////////////////////////////
+//////////////////////////////////////// Icons
+////////////////////////////////////////
+
+$icon-add_circle: "\e900";
+$icon-add: "\e901";
+$icon-arrow_circle_down: "\e902";
+$icon-arrow_circle_left: "\e903";
+$icon-arrow_circle_right: "\e904";
+$icon-arrow_circle_up: "\e905";
+$icon-arrow_drop_left: "\e906";
+$icon-arrow_drop_right: "\e907";
+$icon-arrow_drop_up: "\e908";
+$icon-check: "\e909";
+$icon-chevron_down: "\e90a";
+$icon-chevron_up: "\e90b";
+$icon-content_cut: "\e90c";
+$icon-content_paste: "\e90d";
+$icon-delete: "\e90e";
+$icon-edit: "\e90f";
+$icon-error: "\e910";
+$icon-fullscreen_exit: "\e911";
+$icon-fullscreen: "\e912";
+$icon-instagram: "\e913";
+$icon-menu: "\e914";
+$icon-more_horiz: "\e915";
+$icon-more_vert: "\e916";
+$icon-pause: "\e917";
+$icon-refresh: "\e918";
+$icon-remove_circle: "\e919";
+$icon-remove: "\e91a";
+$icon-save: "\e91b";
+$icon-warning: "\e91c";
+$icon-account_child: "\e91d";
+$icon-arrow_drop_down: "\e91e";
+$icon-attach_money: "\e91f";
+$icon-calendar: "\e920";
+$icon-call: "\e921";
+$icon-chevron_left: "\e922";
+$icon-chevron_right: "\e923";
+$icon-close: "\e924";
+$icon-collections: "\e925";
+$icon-content_copy: "\e926";
+$icon-email: "\e927";
+$icon-facebook: "\e928";
+$icon-googleplus: "\e929";
+$icon-heart: "\e92a";
+$icon-link: "\e92b";
+$icon-linkedin: "\e92c";
+$icon-loader: "\e92d";
+$icon-local_offer: "\e92e";
+$icon-notifications: "\e92f";
+$icon-perm_identity: "\e930";
+$icon-phone_iphone: "\e931";
+$icon-place: "\e932";
+$icon-play_arrow: "\e933";
+$icon-schedule: "\e934";
+$icon-search: "\e935";
+$icon-select: "\e936";
+$icon-settings: "\e937";
+$icon-share: "\e938";
+$icon-star: "\e939";
+$icon-twitter: "\e93a";
+$icon-video_collection: "\e93b";
+$icon-youtube: "\e93c";
+
+$social_icons_map: (
+	facebook: $icon-facebook,
+	twitter: $icon-twitter,
+	googleplus: $icon-googleplus,
+	linkedin: $icon-linkedin,
+	youtube: $icon-youtube,
+	instagram: $icon-instagram,
+	shortlink: $icon-link,
+	email: $icon-email,
+);
+
+
+////////////////////////////////////////
+//////////////////////////////////////// UI
+////////////////////////////////////////
+
+$tr_bg: map-get( map-get($colors_map, grey), lightest );
+
+$th_bg: map-get( map-get($colors_map, main), darker );
+$th_color: $color_white;
+$th_font_size: map-get($text_sizes, medium);
+$th_align: left;
+$th_font_weight: normal;
+
+$td_font_size: map-get($text_sizes, small);
+$td_line_height: 1.3;
+$td_color: map-get( map-get($colors_map, grey), dark );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+.button {
+	@include reset-appearance;
+	
+	display: inline-block;
+	vertical-align: middle;
+	padding: map-get($text_sizes, tiny);
+	margin: .25rem;
+	border-radius: $base_border_radius;
+	font-weight: bold;
+	font-size: map-get($text_sizes, regular);
+	color: map-get(map-get($colors_map, main), regular);
+	text-align: center;
+	line-height: 1.2;
+	text-decoration: underline;
+	cursor: pointer;
+	transition: $base_transition;
+	
+	.icon-elem { text-decoration: none; }
+
+	&:hover {
+		color: map-get(map-get($colors_map, main), dark);
+		text-decoration: none;
+	}
+
+	// modifiers
+
+	@each $type, $color_map in $colors_map {
+		$text_color: $color_white;
+		@if $type == grey { $text_color: map-get($color_map, darker); }
+
+		&--#{$type} {
+			text-decoration: none;
+			color: $text_color;
+			background: map-get($color_map, regular);
+
+			&:hover { 
+				background: map-get($color_map, light);
+				color: $text_color;
+			}
+			&:active { 
+				background: map-get($color_map, dark);
+			}
+
+			&[class*="--ghost"] {
+				background: transparent;
+				color: map-get($color_map, regular);
+				border: 1px solid map-get($color_map, regular);
+				&:hover { 
+					color: map-get($color_map, light);
+					border-color: map-get($color_map, light);
+				}
+				&:active { 
+					color: map-get($color_map, dark);
+					border-color: map-get($color_map, dark);
+				}
+			}			
+		}
+	}
+
+	&--fixed {
+		width: 100%;
+		max-width: 11rem;
+	}
+
+	&--full-width {
+		display: block;
+		width: 100%;
+	}
+
+	&--small {
+		font-weight: normal;
+		font-size: map-get($text_sizes, small);
+	}
+	
+	&[disabled], &--disabled, &--disabled[class*="--ghost"] {
+		color: map-get(map-get($colors_map, grey), light);
+		background: map-get(map-get($colors_map, grey), lightest);
+		border: 1px solid map-get(map-get($colors_map, grey), light);
+		pointer-events: none;
+	}
+}

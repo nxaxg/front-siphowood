@@ -1,0 +1,30 @@
+@import 'gridle/gridle-flex';
+
+// general settings
+@include gridle_setup((
+	context : 12,
+	gutter-width: 1rem,
+	gutter-top: 1rem,
+	gutter-bottom: 1rem,
+	classes-prefix: 'gridle-'
+));
+
+@include gridle_register_state(large, (
+	max-width: $large
+));
+
+@include gridle_register_state(medium, (
+	max-width: $medium
+));
+
+@include gridle_register_state(small, (
+	context : 4,
+	max-width: $small
+));
+
+@include gridle_generate_classes();
+
+.container {
+	max-width: (strip-unit($extra_large) * 1rem);
+	margin: 0 auto;
+}

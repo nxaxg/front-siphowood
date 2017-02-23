@@ -1,0 +1,156 @@
+.slider {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	
+	// Elements
+	&__items {
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+	}
+
+	&__slide {
+		display: block;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__arrows {
+		display: block;
+		width: 100%;
+		overflow: hidden;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		pointer-events: none;
+		transform: translateY(-50%);
+	}
+
+	&__arrow {
+		@include reset-appearance;
+		@extend %icon-font-family;
+		pointer-events: auto;
+		display: block;
+		padding: 1rem 0;
+		background: transparent;
+
+		font-size: 2.5rem;
+		line-height: 1;
+		color: map-get(map-get($colors_map, grey), regular);
+		text-align: center;
+
+		transition: $base_transition;
+
+		&:hover {
+			color: map-get(map-get($colors_map, grey), lighter);
+			background: map-get(map-get($colors_map, main), regular);
+		}
+
+		&:active {
+			background: map-get(map-get($colors_map, main), dark);
+		}
+
+
+		// modifiers
+		&--prev {
+			float: left;
+			&::before { content: $icon-chevron_left; }
+		}
+
+		&--next {
+			float: right;
+			&::before { content: $icon-chevron_right; }
+		}
+	}
+
+	&__bullets {
+		display: block;
+		width: 100%;
+		padding: 1rem 0;
+		line-height: 1;
+	}
+
+	&__bullet {
+		@include reset-appearance;
+		display: inline-block;
+		vertical-align: middle;
+		width: map-get($text_sizes, medium);
+		height: map-get($text_sizes, medium);
+		border-radius: map-get($text_sizes, medium);
+		border: 1px solid map-get(map-get($colors_map, grey), regular);
+		background: map-get(map-get($colors_map, grey), regular);
+		transition: $base_transition;
+
+		&:hover {
+			border-color: $color_white;
+			background: map-get(map-get($colors_map, grey), dark);
+		}
+
+		&--current {
+			border-color: $color_white;
+			background: map-get(map-get($colors_map, main), regular);
+
+			&:hover {
+				background: map-get(map-get($colors_map, main), dark);
+			}
+		}
+	}
+
+	&__thumbnails {
+		display: flex;
+		width: 100%;
+		padding: 1rem 0;
+		line-height: 1;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	&__thumbnail {
+		@include reset-appearance;
+		display: inline-block;
+		vertical-align: middle;
+		flex: 1;
+		max-width: 25%;
+		min-width: 15%;
+		margin: 0 .25rem;
+		opacity: .7;
+		border: 1px solid $color_white;
+		transition: $base_transition;
+
+		img { @extend .cover-img; }
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&--current {
+			opacity: 1;
+			border-color: map-get(map-get($colors_map, main), regular);
+			&:hover { border-color: map-get(map-get($colors_map, main), dark); }
+		}
+
+		@include media( medium-down ){
+			max-width: 33%;
+			min-width: 33%;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
